@@ -25,6 +25,10 @@ const twilioClient = twilio(
 );
 const verifySid = process.env.TWILIO_SERVICE_SID;
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Marsos Auth API");
+});
+
 // ✅ Send OTP (Twilio SMS)
 app.post("/send-otp", async (req, res) => {
   const { phone } = req.body;
